@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Доступ к видео</title>
+    <title>Доступ к видео и материалам</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,7 +31,7 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-        button {
+        button, .download-btn {
             background-color: #007bff;
             color: white;
             border: none;
@@ -40,9 +40,19 @@
             cursor: pointer;
             width: 100%;
             font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            box-sizing: border-box;
+            margin-top: 10px;
         }
-        button:hover {
+        button:hover, .download-btn:hover {
             background-color: #0056b3;
+        }
+        .download-btn {
+            background-color: #28a745; /* Зеленый цвет для кнопки скачивания */
+        }
+        .download-btn:hover {
+            background-color: #218838;
         }
         .error {
             color: red;
@@ -50,15 +60,25 @@
             font-size: 14px;
             display: none;
         }
+        hr {
+            margin: 25px 0;
+            border: none;
+            border-top: 1px solid #eee;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>Введите пароль для доступа</h2>
+    <h2>Доступ к видео</h2>
     <input type="password" id="passwordInput" placeholder="Введите пароль">
     <button onclick="checkPassword()">Войти</button>
     <div class="error" id="errorMessage">Неверный пароль. Попробуйте еще раз.</div>
+
+    <hr>
+
+    <h3>Скачать карту</h3>
+    <a href="https://www.dropbox.com/scl/fi/v2ttidet6l0sj0di324yg/zorro.bsp?rlkey=b36pv6hntig12amq1d9rpm5f1&st=qc667sfv&dl=1" class="download-btn">Скачать zorro.bsp</a>
 </div>
 
 <script>
